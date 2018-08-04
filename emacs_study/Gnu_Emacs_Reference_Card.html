@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-08-04 周六 14:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge69dc97">1. Leaving Emacs</a>
+<ul>
+<li><a href="#orged051eb">1.1. suspend Emacs (or inconify it under X)                      C-z</a></li>
+<li><a href="#org6f4eb60">1.2. exit Emacs permanently                                      C-x C-c</a></li>
+</ul>
+</li>
+<li><a href="#org5323eab">2. Files</a>
+<ul>
+<li><a href="#org07dc0c3">2.1. read a file into Emacs                                      C-x C-f</a></li>
+<li><a href="#orge98011b">2.2. save a file back to disk                                    C-x C-s</a></li>
+<li><a href="#org109f0c6">2.3. save all files                                              C-x s</a></li>
+<li><a href="#orgb1f6772">2.4. insert contents of another file into this buffer            C-x i</a></li>
+<li><a href="#org59b7f66">2.5. replace this file with the file you really want             C-x C-v</a></li>
+<li><a href="#orgc6a3062">2.6. write buffer to a specified file                            C-x C-w</a></li>
+<li><a href="#org4219901">2.7. toggle read-olny status of buffer                           C-x C-q</a></li>
+</ul>
+</li>
+<li><a href="#orgbd915b6">3. Getting Help</a>
+<ul>
+<li><a href="#org2a7c5b3">3.1. remove help window                                         C-x 1</a></li>
+<li><a href="#org2077377">3.2. scroll help window                                         C-M-v</a></li>
+<li><a href="#org2452693">3.3. apropos: show commands matching a string                   C-h a</a></li>
+<li><a href="#org7a6ff22">3.4. describe the function a key runs                           C-h k</a></li>
+<li><a href="#org58d181c">3.5. describe a function                                        C-h f</a></li>
+<li><a href="#org0bf02da">3.6. get mode-specific information                              C-h m</a></li>
+</ul>
+</li>
+<li><a href="#org08ddf8f">4. Error Recovery</a>
+<ul>
+<li><a href="#org721f874">4.1. abort partially typed or executing command                 C-g</a></li>
+<li><a href="#orge703ce9">4.2. recover files lost by a system crash                       M-x recover-session</a></li>
+<li><a href="#org4320288">4.3. undo an unwanted change                                    C-x C-_ or C-/</a></li>
+<li><a href="#org34af5b4">4.4. resotre a buffer to its original contents                  M-x revert-buffer</a></li>
+<li><a href="#org45a8348">4.5. redraw garbaged screen                                     C-l</a></li>
+</ul>
+</li>
+<li><a href="#org0205c93">5. Incremental Search</a>
+<ul>
+<li><a href="#org86b5f96">5.1. search forward                                             C-s</a></li>
+<li><a href="#org96c14a6">5.2. search backword                                            C-r</a></li>
+<li><a href="#orga985df6">5.3. regular expression search                                  C-M-s</a></li>
+<li><a href="#orgd9091ff">5.4. reverse regular expression search                          C-M-r</a></li>
+<li><a href="#org5cf9b8c">5.5. select previous search string                              M-p</a></li>
+<li><a href="#orgd081d1d">5.6. select next search string                                  M-n</a></li>
+<li><a href="#org7e622e3">5.7. exit incremental search                                    RET</a></li>
+<li><a href="#org68bfabc">5.8. undo effect of last character                              DEL</a></li>
+<li><a href="#org7e27724">5.9. abort current search                                       C-g</a></li>
+</ul>
+</li>
+<li><a href="#org6c995c3">6. Shells</a>
+<ul>
+<li><a href="#orgea53479">6.1. excute a shell command                                    M-!</a></li>
+<li><a href="#orgfeffea1">6.2. run a shell command on the region                         M-|</a></li>
+<li><a href="#org4bc2f99">6.3. filter region through a shell command                     C-u M-|</a></li>
+<li><a href="#org03c43cc">6.4. start a shell in window <b>shell</b>                           M-x shell</a></li>
+</ul>
+</li>
+<li><a href="#org2a937f4">7. Transposing</a>
+<ul>
+<li><a href="#org48ecfa0">7.1. transpose characters                                      C-t</a></li>
+<li><a href="#org4519100">7.2. transpose words                                           M-t</a></li>
+<li><a href="#org890b5e9">7.3. transpose lines                                           C-x C-t</a></li>
+<li><a href="#org6f81a0f">7.4. transpose sexps                                           C-M-t</a></li>
+</ul>
+</li>
+<li><a href="#org4d84a2f">8. Motion</a>
+<ul>
+<li><a href="#org06b577d">8.1. base cusor moving</a></li>
+<li><a href="#orgda111b9">8.2. scroll to next screen                                      C-v</a></li>
+<li><a href="#org2f15fc8">8.3. scroll to previous screen                                  M-v</a></li>
+<li><a href="#orgc9175e5">8.4. scroll left                                                C-x &gt;</a></li>
+<li><a href="#org62c5389">8.5. scroll right                                               C-x &lt;</a></li>
+<li><a href="#orgc782dd1">8.6. scroll current line to center of screent                   C-u C-l</a></li>
+</ul>
+</li>
+<li><a href="#org7bf8e02">9. Killing and Deleting</a>
+<ul>
+<li><a href="#orgce27b2e">9.1. Base Killing and Deleting</a></li>
+<li><a href="#orgafc7b9d">9.2. kill region                                                C-w</a></li>
+<li><a href="#org51a0467">9.3. copy region to kill ring                                   M-w</a></li>
+<li><a href="#orgabe3a1d">9.4. kill though next occurrentce of char                       M-z <i>char</i></a></li>
+<li><a href="#org53c51d7">9.5. yank back last thing killed                                C-y</a></li>
+<li><a href="#org18dc8d7">9.6. releace last yank with provious kill                       M-y</a></li>
+</ul>
+</li>
+<li><a href="#org5fe0a22">10. Marking</a>
+<ul>
+<li><a href="#orga01aeef">10.1. set mark here                                             C-@ or C-SPC</a></li>
+<li><a href="#orgb3653f5">10.2. exchange point and mark                                   C-x C-x</a></li>
+<li><a href="#org1a46dad">10.3. set mark <i>arg</i> words away                                 M-@</a></li>
+<li><a href="#orgbf6dedd">10.4. mark paragraph                                            M-h</a></li>
+<li><a href="#org7961cba">10.5. mark page                                                 C-x C-p</a></li>
+<li><a href="#org0a498d7">10.6. mark sexp                                                 C-M-@</a></li>
+<li><a href="#org4a6d938">10.7. mark function                                             C-M-h</a></li>
+<li><a href="#org816a1ed">10.8. mark entire buffer                                        C-x h</a></li>
+</ul>
+</li>
+<li><a href="#orgda80d36">11. Query Replace</a>
+<ul>
+<li><a href="#org97ef050">11.1. interactively relpace a text string                       M-%</a></li>
+</ul>
+</li>
+<li><a href="#org9467f67">12. Spelling Check</a>
+<ul>
+<li><a href="#orgcb1aa58">12.1. check spelling of current word                            M-%</a></li>
+<li><a href="#org1179778">12.2. check spelling of all words in region                     M-x ispell-region</a></li>
+<li><a href="#orgc3371a8">12.3. check spelling of entire                                  M-x ispell-buffer</a></li>
+</ul>
+</li>
+<li><a href="#org3d0770b">13. Buffers</a>
+<ul>
+<li><a href="#org7ea353b">13.1. select another buffer                                     C-x b</a></li>
+<li><a href="#org9276e5d">13.2. list all buffers                                          C-x C-b</a></li>
+<li><a href="#org0a9a687">13.3. kill a buffer                                             C-x k</a></li>
+</ul>
+</li>
+<li><a href="#org21f4a33">14. Multiple Windows</a></li>
+<li><a href="#orga3412c0">15. Formatting</a></li>
+<li><a href="#orga00a4a4">16. Case Change</a></li>
+<li><a href="#org8fe7d34">17. The Minibuffer</a></li>
+<li><a href="#orgd0ef2c0">18. Tags</a></li>
+<li><a href="#org494d998">19. Rectangles</a></li>
+<li><a href="#org6ed8038">20. Abbrevs</a></li>
+<li><a href="#orgc5b9632">21. Registers</a></li>
+<li><a href="#org8b886c7">22. Keyborad Macros</a></li>
+<li><a href="#org5c269b1">23. Commands Dealing With Emacs Lisp</a></li>
+<li><a href="#orgb784fe9">24. Sample Custiomization</a></li>
+<li><a href="#org85080ff">25. Writing Commands</a></li>
+</ul>
+</div>
+</div>
+<p>
+#+TITLE GNU Emacs Reference Card
+</p>
+<div id="outline-container-orge69dc97" class="outline-2">
+<h2 id="orge69dc97"><span class="section-number-2">1</span> Leaving Emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orged051eb" class="outline-3">
+<h3 id="orged051eb"><span class="section-number-3">1.1</span> suspend Emacs (or inconify it under X)                      C-z</h3>
+</div>
+<div id="outline-container-org6f4eb60" class="outline-3">
+<h3 id="org6f4eb60"><span class="section-number-3">1.2</span> exit Emacs permanently                                      C-x C-c</h3>
+</div>
+</div>
+<div id="outline-container-org5323eab" class="outline-2">
+<h2 id="org5323eab"><span class="section-number-2">2</span> Files</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org07dc0c3" class="outline-3">
+<h3 id="org07dc0c3"><span class="section-number-3">2.1</span> read a file into Emacs                                      C-x C-f</h3>
+</div>
+<div id="outline-container-orge98011b" class="outline-3">
+<h3 id="orge98011b"><span class="section-number-3">2.2</span> save a file back to disk                                    C-x C-s</h3>
+</div>
+<div id="outline-container-org109f0c6" class="outline-3">
+<h3 id="org109f0c6"><span class="section-number-3">2.3</span> save all files                                              C-x s</h3>
+</div>
+<div id="outline-container-orgb1f6772" class="outline-3">
+<h3 id="orgb1f6772"><span class="section-number-3">2.4</span> insert contents of another file into this buffer            C-x i</h3>
+</div>
+<div id="outline-container-org59b7f66" class="outline-3">
+<h3 id="org59b7f66"><span class="section-number-3">2.5</span> replace this file with the file you really want             C-x C-v</h3>
+</div>
+<div id="outline-container-orgc6a3062" class="outline-3">
+<h3 id="orgc6a3062"><span class="section-number-3">2.6</span> write buffer to a specified file                            C-x C-w</h3>
+</div>
+<div id="outline-container-org4219901" class="outline-3">
+<h3 id="org4219901"><span class="section-number-3">2.7</span> toggle read-olny status of buffer                           C-x C-q</h3>
+</div>
+</div>
+<div id="outline-container-orgbd915b6" class="outline-2">
+<h2 id="orgbd915b6"><span class="section-number-2">3</span> Getting Help</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The help system is simple. Type <b>C-h*(or *F1</b>) and fellow the directions.
+If you are a first-time user, Type <b>C-h t</b> for a tutorial.
+</p>
+</div>
+
+<div id="outline-container-org2a7c5b3" class="outline-3">
+<h3 id="org2a7c5b3"><span class="section-number-3">3.1</span> remove help window                                         C-x 1</h3>
+</div>
+<div id="outline-container-org2077377" class="outline-3">
+<h3 id="org2077377"><span class="section-number-3">3.2</span> scroll help window                                         C-M-v</h3>
+</div>
+<div id="outline-container-org2452693" class="outline-3">
+<h3 id="org2452693"><span class="section-number-3">3.3</span> apropos: show commands matching a string                   C-h a</h3>
+</div>
+<div id="outline-container-org7a6ff22" class="outline-3">
+<h3 id="org7a6ff22"><span class="section-number-3">3.4</span> describe the function a key runs                           C-h k</h3>
+</div>
+<div id="outline-container-org58d181c" class="outline-3">
+<h3 id="org58d181c"><span class="section-number-3">3.5</span> describe a function                                        C-h f</h3>
+</div>
+<div id="outline-container-org0bf02da" class="outline-3">
+<h3 id="org0bf02da"><span class="section-number-3">3.6</span> get mode-specific information                              C-h m</h3>
+</div>
+</div>
+<div id="outline-container-org08ddf8f" class="outline-2">
+<h2 id="org08ddf8f"><span class="section-number-2">4</span> Error Recovery</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org721f874" class="outline-3">
+<h3 id="org721f874"><span class="section-number-3">4.1</span> abort partially typed or executing command                 C-g</h3>
+</div>
+<div id="outline-container-orge703ce9" class="outline-3">
+<h3 id="orge703ce9"><span class="section-number-3">4.2</span> recover files lost by a system crash                       M-x recover-session</h3>
+</div>
+<div id="outline-container-org4320288" class="outline-3">
+<h3 id="org4320288"><span class="section-number-3">4.3</span> undo an unwanted change                                    C-x C-_ or C-/</h3>
+</div>
+<div id="outline-container-org34af5b4" class="outline-3">
+<h3 id="org34af5b4"><span class="section-number-3">4.4</span> resotre a buffer to its original contents                  M-x revert-buffer</h3>
+</div>
+<div id="outline-container-org45a8348" class="outline-3">
+<h3 id="org45a8348"><span class="section-number-3">4.5</span> redraw garbaged screen                                     C-l</h3>
+</div>
+</div>
+<div id="outline-container-org0205c93" class="outline-2">
+<h2 id="org0205c93"><span class="section-number-2">5</span> Incremental Search</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org86b5f96" class="outline-3">
+<h3 id="org86b5f96"><span class="section-number-3">5.1</span> search forward                                             C-s</h3>
+</div>
+<div id="outline-container-org96c14a6" class="outline-3">
+<h3 id="org96c14a6"><span class="section-number-3">5.2</span> search backword                                            C-r</h3>
+</div>
+<div id="outline-container-orga985df6" class="outline-3">
+<h3 id="orga985df6"><span class="section-number-3">5.3</span> regular expression search                                  C-M-s</h3>
+</div>
+<div id="outline-container-orgd9091ff" class="outline-3">
+<h3 id="orgd9091ff"><span class="section-number-3">5.4</span> reverse regular expression search                          C-M-r</h3>
+</div>
+<div id="outline-container-org5cf9b8c" class="outline-3">
+<h3 id="org5cf9b8c"><span class="section-number-3">5.5</span> select previous search string                              M-p</h3>
+</div>
+<div id="outline-container-orgd081d1d" class="outline-3">
+<h3 id="orgd081d1d"><span class="section-number-3">5.6</span> select next search string                                  M-n</h3>
+</div>
+<div id="outline-container-org7e622e3" class="outline-3">
+<h3 id="org7e622e3"><span class="section-number-3">5.7</span> exit incremental search                                    RET</h3>
+</div>
+<div id="outline-container-org68bfabc" class="outline-3">
+<h3 id="org68bfabc"><span class="section-number-3">5.8</span> undo effect of last character                              DEL</h3>
+</div>
+<div id="outline-container-org7e27724" class="outline-3">
+<h3 id="org7e27724"><span class="section-number-3">5.9</span> abort current search                                       C-g</h3>
+<div class="outline-text-3" id="text-5-9">
+<p>
+  Use <b>C-s</b> or <b>C-r</b> again to repeat the search in either direction. If Emacs is 
+still searching, <b>C-g</b> cancels only the part not matched.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c995c3" class="outline-2">
+<h2 id="org6c995c3"><span class="section-number-2">6</span> Shells</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgea53479" class="outline-3">
+<h3 id="orgea53479"><span class="section-number-3">6.1</span> excute a shell command                                    M-!</h3>
+</div>
+<div id="outline-container-orgfeffea1" class="outline-3">
+<h3 id="orgfeffea1"><span class="section-number-3">6.2</span> run a shell command on the region                         M-|</h3>
+</div>
+<div id="outline-container-org4bc2f99" class="outline-3">
+<h3 id="org4bc2f99"><span class="section-number-3">6.3</span> filter region through a shell command                     C-u M-|</h3>
+</div>
+<div id="outline-container-org03c43cc" class="outline-3">
+<h3 id="org03c43cc"><span class="section-number-3">6.4</span> start a shell in window <b>shell</b>                           M-x shell</h3>
+</div>
+</div>
+
+<div id="outline-container-org2a937f4" class="outline-2">
+<h2 id="org2a937f4"><span class="section-number-2">7</span> Transposing</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org48ecfa0" class="outline-3">
+<h3 id="org48ecfa0"><span class="section-number-3">7.1</span> transpose characters                                      C-t</h3>
+</div>
+<div id="outline-container-org4519100" class="outline-3">
+<h3 id="org4519100"><span class="section-number-3">7.2</span> transpose words                                           M-t</h3>
+</div>
+<div id="outline-container-org890b5e9" class="outline-3">
+<h3 id="org890b5e9"><span class="section-number-3">7.3</span> transpose lines                                           C-x C-t</h3>
+</div>
+<div id="outline-container-org6f81a0f" class="outline-3">
+<h3 id="org6f81a0f"><span class="section-number-3">7.4</span> transpose sexps                                           C-M-t</h3>
+</div>
+</div>
+
+<div id="outline-container-org4d84a2f" class="outline-2">
+<h2 id="org4d84a2f"><span class="section-number-2">8</span> Motion</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org06b577d" class="outline-3">
+<h3 id="org06b577d"><span class="section-number-3">8.1</span> base cusor moving</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+#+CAPTION Emacs cusor moving
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">entity to move over</th>
+<th scope="col" class="org-left">backward</th>
+<th scope="col" class="org-left">forward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">character</td>
+<td class="org-left">C-b</td>
+<td class="org-left">C-f</td>
+</tr>
+
+<tr>
+<td class="org-left">word</td>
+<td class="org-left">M-b</td>
+<td class="org-left">M-f</td>
+</tr>
+
+<tr>
+<td class="org-left">line</td>
+<td class="org-left">C-p</td>
+<td class="org-left">C-n</td>
+</tr>
+
+<tr>
+<td class="org-left">go to line beginning (or end)</td>
+<td class="org-left">C-a</td>
+<td class="org-left">C-e</td>
+</tr>
+
+<tr>
+<td class="org-left">sentence</td>
+<td class="org-left">M-a</td>
+<td class="org-left">M-e</td>
+</tr>
+
+<tr>
+<td class="org-left">paragraph</td>
+<td class="org-left">M-{</td>
+<td class="org-left">M-}</td>
+</tr>
+
+<tr>
+<td class="org-left">page</td>
+<td class="org-left">C-x [</td>
+<td class="org-left">C-x ]</td>
+</tr>
+
+<tr>
+<td class="org-left">sexp</td>
+<td class="org-left">C-M-b</td>
+<td class="org-left">C-M-f</td>
+</tr>
+
+<tr>
+<td class="org-left">function</td>
+<td class="org-left">C-M-a</td>
+<td class="org-left">C-M-e</td>
+</tr>
+
+<tr>
+<td class="org-left">go to buffer beginning (or end)</td>
+<td class="org-left">M-&lt;</td>
+<td class="org-left">M-&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgda111b9" class="outline-3">
+<h3 id="orgda111b9"><span class="section-number-3">8.2</span> scroll to next screen                                      C-v</h3>
+</div>
+<div id="outline-container-org2f15fc8" class="outline-3">
+<h3 id="org2f15fc8"><span class="section-number-3">8.3</span> scroll to previous screen                                  M-v</h3>
+</div>
+<div id="outline-container-orgc9175e5" class="outline-3">
+<h3 id="orgc9175e5"><span class="section-number-3">8.4</span> scroll left                                                C-x &gt;</h3>
+</div>
+<div id="outline-container-org62c5389" class="outline-3">
+<h3 id="org62c5389"><span class="section-number-3">8.5</span> scroll right                                               C-x &lt;</h3>
+</div>
+<div id="outline-container-orgc782dd1" class="outline-3">
+<h3 id="orgc782dd1"><span class="section-number-3">8.6</span> scroll current line to center of screent                   C-u C-l</h3>
+</div>
+</div>
+
+<div id="outline-container-org7bf8e02" class="outline-2">
+<h2 id="org7bf8e02"><span class="section-number-2">9</span> Killing and Deleting</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgce27b2e" class="outline-3">
+<h3 id="orgce27b2e"><span class="section-number-3">9.1</span> Base Killing and Deleting</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+#+CAPTION Base Killing and Deleting
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">entity to kill</th>
+<th scope="col" class="org-left">backward</th>
+<th scope="col" class="org-left">forward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">character (delete, not kill</td>
+<td class="org-left">DEL</td>
+<td class="org-left">C-d</td>
+</tr>
+
+<tr>
+<td class="org-left">word</td>
+<td class="org-left">M-DEL</td>
+<td class="org-left">M-d</td>
+</tr>
+
+<tr>
+<td class="org-left">line (to end of)</td>
+<td class="org-left">M-0 C-k</td>
+<td class="org-left">M-k</td>
+</tr>
+
+<tr>
+<td class="org-left">sentence</td>
+<td class="org-left">C-x DEL</td>
+<td class="org-left">M-k</td>
+</tr>
+
+<tr>
+<td class="org-left">sexp</td>
+<td class="org-left">M&#x2013; C-M-k</td>
+<td class="org-left">C-M-k</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgafc7b9d" class="outline-3">
+<h3 id="orgafc7b9d"><span class="section-number-3">9.2</span> kill region                                                C-w</h3>
+</div>
+<div id="outline-container-org51a0467" class="outline-3">
+<h3 id="org51a0467"><span class="section-number-3">9.3</span> copy region to kill ring                                   M-w</h3>
+</div>
+<div id="outline-container-orgabe3a1d" class="outline-3">
+<h3 id="orgabe3a1d"><span class="section-number-3">9.4</span> kill though next occurrentce of char                       M-z <i>char</i></h3>
+</div>
+<div id="outline-container-org53c51d7" class="outline-3">
+<h3 id="org53c51d7"><span class="section-number-3">9.5</span> yank back last thing killed                                C-y</h3>
+</div>
+<div id="outline-container-org18dc8d7" class="outline-3">
+<h3 id="org18dc8d7"><span class="section-number-3">9.6</span> releace last yank with provious kill                       M-y</h3>
+</div>
+</div>
+
+<div id="outline-container-org5fe0a22" class="outline-2">
+<h2 id="org5fe0a22"><span class="section-number-2">10</span> Marking</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orga01aeef" class="outline-3">
+<h3 id="orga01aeef"><span class="section-number-3">10.1</span> set mark here                                             C-@ or C-SPC</h3>
+</div>
+<div id="outline-container-orgb3653f5" class="outline-3">
+<h3 id="orgb3653f5"><span class="section-number-3">10.2</span> exchange point and mark                                   C-x C-x</h3>
+</div>
+<div id="outline-container-org1a46dad" class="outline-3">
+<h3 id="org1a46dad"><span class="section-number-3">10.3</span> set mark <i>arg</i> words away                                 M-@</h3>
+</div>
+<div id="outline-container-orgbf6dedd" class="outline-3">
+<h3 id="orgbf6dedd"><span class="section-number-3">10.4</span> mark paragraph                                            M-h</h3>
+</div>
+<div id="outline-container-org7961cba" class="outline-3">
+<h3 id="org7961cba"><span class="section-number-3">10.5</span> mark page                                                 C-x C-p</h3>
+</div>
+<div id="outline-container-org0a498d7" class="outline-3">
+<h3 id="org0a498d7"><span class="section-number-3">10.6</span> mark sexp                                                 C-M-@</h3>
+</div>
+<div id="outline-container-org4a6d938" class="outline-3">
+<h3 id="org4a6d938"><span class="section-number-3">10.7</span> mark function                                             C-M-h</h3>
+</div>
+<div id="outline-container-org816a1ed" class="outline-3">
+<h3 id="org816a1ed"><span class="section-number-3">10.8</span> mark entire buffer                                        C-x h</h3>
+</div>
+</div>
+<div id="outline-container-orgda80d36" class="outline-2">
+<h2 id="orgda80d36"><span class="section-number-2">11</span> Query Replace</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org97ef050" class="outline-3">
+<h3 id="org97ef050"><span class="section-number-3">11.1</span> interactively relpace a text string                       M-%</h3>
+</div>
+</div>
+<div id="outline-container-org9467f67" class="outline-2">
+<h2 id="org9467f67"><span class="section-number-2">12</span> Spelling Check</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-orgcb1aa58" class="outline-3">
+<h3 id="orgcb1aa58"><span class="section-number-3">12.1</span> check spelling of current word                            M-%</h3>
+</div>
+<div id="outline-container-org1179778" class="outline-3">
+<h3 id="org1179778"><span class="section-number-3">12.2</span> check spelling of all words in region                     M-x ispell-region</h3>
+</div>
+<div id="outline-container-orgc3371a8" class="outline-3">
+<h3 id="orgc3371a8"><span class="section-number-3">12.3</span> check spelling of entire                                  M-x ispell-buffer</h3>
+</div>
+</div>
+<div id="outline-container-org3d0770b" class="outline-2">
+<h2 id="org3d0770b"><span class="section-number-2">13</span> Buffers</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org7ea353b" class="outline-3">
+<h3 id="org7ea353b"><span class="section-number-3">13.1</span> select another buffer                                     C-x b</h3>
+</div>
+<div id="outline-container-org9276e5d" class="outline-3">
+<h3 id="org9276e5d"><span class="section-number-3">13.2</span> list all buffers                                          C-x C-b</h3>
+</div>
+<div id="outline-container-org0a9a687" class="outline-3">
+<h3 id="org0a9a687"><span class="section-number-3">13.3</span> kill a buffer                                             C-x k</h3>
+</div>
+</div>
+<div id="outline-container-org21f4a33" class="outline-2">
+<h2 id="org21f4a33"><span class="section-number-2">14</span> Multiple Windows</h2>
+</div>
+<div id="outline-container-orga3412c0" class="outline-2">
+<h2 id="orga3412c0"><span class="section-number-2">15</span> Formatting</h2>
+</div>
+<div id="outline-container-orga00a4a4" class="outline-2">
+<h2 id="orga00a4a4"><span class="section-number-2">16</span> Case Change</h2>
+</div>
+<div id="outline-container-org8fe7d34" class="outline-2">
+<h2 id="org8fe7d34"><span class="section-number-2">17</span> The Minibuffer</h2>
+</div>
+<div id="outline-container-orgd0ef2c0" class="outline-2">
+<h2 id="orgd0ef2c0"><span class="section-number-2">18</span> Tags</h2>
+</div>
+<div id="outline-container-org494d998" class="outline-2">
+<h2 id="org494d998"><span class="section-number-2">19</span> Rectangles</h2>
+</div>
+<div id="outline-container-org6ed8038" class="outline-2">
+<h2 id="org6ed8038"><span class="section-number-2">20</span> Abbrevs</h2>
+</div>
+<div id="outline-container-orgc5b9632" class="outline-2">
+<h2 id="orgc5b9632"><span class="section-number-2">21</span> Registers</h2>
+</div>
+<div id="outline-container-org8b886c7" class="outline-2">
+<h2 id="org8b886c7"><span class="section-number-2">22</span> Keyborad Macros</h2>
+</div>
+<div id="outline-container-org5c269b1" class="outline-2">
+<h2 id="org5c269b1"><span class="section-number-2">23</span> Commands Dealing With Emacs Lisp</h2>
+</div>
+<div id="outline-container-orgb784fe9" class="outline-2">
+<h2 id="orgb784fe9"><span class="section-number-2">24</span> Sample Custiomization</h2>
+</div>
+<div id="outline-container-org85080ff" class="outline-2">
+<h2 id="org85080ff"><span class="section-number-2">25</span> Writing Commands</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2018-08-04 周六 14:00</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

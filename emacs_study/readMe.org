@@ -1,0 +1,11 @@
+#+TITLE emacs configuration org
+
+* Emacs editor base config
+* org-mode 
+* python-mode
+* C/C++-mode
+* auto-complete
+* flycheck
+* gtags
+* projectile-mode
+* magit
