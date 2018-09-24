@@ -9,3 +9,9 @@ ls
 cd ../
 ls
 exit
+cc hello.c 
+clear
+ls
+./a.out 
+clear
+exit
