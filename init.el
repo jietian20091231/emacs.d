@@ -165,13 +165,25 @@
 ;; yasnippet
 (require 'yasnippet)
 (yas-initialize)
-(global-set-key (kbd "C-c ; u") 'yas-expand)
-(global-set-key (kbd "C-c ; s") 'yas-insert-snippet)
+;;(global-set-key (kbd "C-c ; u") 'yas-expand)
+;;(global-set-key (kbd "C-c ; s") 'yas-insert-snippet)
 (yas-global-mode 1)
 
 ;; auto-completed
 (require 'auto-complete)
 (ac-config-default)
+
+;; auto-completed header
+(defun my:ac-c-header-init()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"))
+
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+
+;; Fix iedit bug in Mac
+(define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 ;; auto-pair
 (use-package autopair
@@ -201,7 +213,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
+    (iedit auto-complete-c-headers auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

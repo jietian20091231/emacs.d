@@ -15,3 +15,36 @@ ls
 ./a.out 
 clear
 exit
+ls
+clang++ addition.cpp temp.cpp 
+./a.out 
+ls -al
+rm -rf a.out 
+rm -rf addition.h
+rm -rf addition.cpp 
+rm -rf temp.cpp\~
+rm -rf temp.cpp 
+rm -rf yasnippet-snippets-master/
+rm -rf yasnippet-snippets-master.zip 
+clear
+exit
+cc hello.c
+./a.out 
+clear
+ls
+exit
+cc hello.c
+cc hello.c
+./a.out 
+clear
+cc hello.c
+./a.out 
+cc hello.c
+./a.out 
+clear
+exit
+cc hello.c
+./a.out 
+rm -rf a.out 
+clear
+ls

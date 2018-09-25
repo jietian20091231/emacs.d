@@ -1,60 +1,80 @@
-((("main" .
-   [2 0 0 0])
-  (":config" .
-   [1 0 0 0 0 0 0])
-  (":initial" .
-   [0 0 0 0 0 1 0 0])
-  ("auto-pair" .
-   [1 0 0 0 0 0 0 0 0])
-  ("yas-initialize" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("ac-config-default" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("autoarg" .
-   [0 0 0 0 0 1 0])
-  ("yasnippet" .
-   [0 0 0 1 0 0 0 0 1])
-  (":init" .
-   [2 0 0 0 0])
-  (":ensure" .
-   [1 0 0 2 0 0 1])
-  ("auto-complete" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("auto-completed" .
-   [0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("use-package" .
-   [0 0 0 1 0 0 0 0 0 0 3])
-  ("include" .
-   [0 0 0 0 1 0 0])
-  ("return" .
-   [0 0 0 0 0 1])
-  ("addition" .
-   [0 0 0 3 1 0 0 0])
-  ("printf" .
-   [1 0 0 0 1 2])
-  ("while" .
-   [0 1 0 2 5])
-  ("require" .
-   [3 0 0 0 0 0 0])
-  ("yas-global-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("define-key" .
-   [2 0 0 0 0 0 0 0 0 0])
-  ("yas-minor-mode-on" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
-  ("yas-minor-mode-map" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("kbd" .
-   [4 0 0])
-  ("yas/expand" .
-   [0 0 0 0 0 1 0 0 0 0])
-  ("yas-minor" .
-   [0 0 0 0 0 0 0 0 1])
-  ("nil" .
-   [1 0 0])
-  ("yas-expand" .
-   [0 0 0 0 0 1 0 0 0 1])
+((("add-to-list" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("my:ac-c-header-init" .
+   [0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("add-hook" .
+   [2 0 0 0 0 0 0 0])
+  ("ac-sources" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("add-to-" .
+   [0 0 0 0 0 0 1])
+  ("auto-complete-c-headers" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("yas-insert-snippet" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
   ("global-set-key" .
    [1 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("yas-insert-snippet" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])))
+  ("yas-expand" .
+   [0 0 0 0 0 1 0 0 0 1])
+  ("nil" .
+   [1 0 0])
+  ("yas-minor" .
+   [0 0 0 0 0 0 0 0 1])
+  ("yas/expand" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("kbd" .
+   [5 0 0])
+  ("yas-minor-mode-map" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("yas-minor-mode-on" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("define-key" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("yas-global-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("require" .
+   [6 0 0 0 0 0 0])
+  ("while" .
+   [0 1 0 2 5])
+  ("printf" .
+   [1 0 0 1 1 2])
+  ("addition" .
+   [1 0 0 4 1 0 0 0])
+  ("return" .
+   [0 0 0 0 0 1])
+  ("include" .
+   [0 0 0 0 1 0 0])
+  ("use-package" .
+   [0 0 0 1 0 0 0 0 0 0 3])
+  ("auto-completed" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("auto-complete" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 1])
+  (":ensure" .
+   [1 0 0 2 0 0 1])
+  (":init" .
+   [2 0 0 0 0])
+  ("yasnippet" .
+   [0 0 0 1 0 0 0 0 1])
+  ("autoarg" .
+   [0 0 0 0 0 1 0])
+  ("ac-config-default" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("yas-initialize" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("auto-pair" .
+   [1 0 0 0 0 0 0 0 0])
+  (":initial" .
+   [0 0 0 0 0 1 0 0])
+  (":config" .
+   [1 0 0 0 0 0 0])
+  ("main" .
+   [2 0 0 0])
+  ("defun" .
+   [2 0 0 0 0])
+  ("global" .
+   [0 0 1 0 0 0])
+  ("global-map" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("iedit-mode" .
+   [1 0 0 0 0 0 0 0 0 0])))
