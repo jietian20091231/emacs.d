@@ -1,5 +1,13 @@
 ;; emacs editor base setting
 
+;;set python interperter
+(setq python-shell-interpreter "/Users/Jie/anaconda3/bin/python3")
+(setq python-shell-virtualenv-path "/Users/Jie/anaconda3")
+
+;;
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
+
 (setq inhibit-startup-message t)
 
 (setq frame-title-format "emacs")
@@ -122,7 +130,7 @@
   (("M-y" . counsel-yank-pop)
    :map ivy-minibuffer-map
    ("M-y" . ivy-next-line))
-  )
+)
 
 (use-package ivy
   :ensure t
@@ -163,11 +171,49 @@
 
 
 ;; yasnippet
-(require 'yasnippet)
-(yas-initialize)
-;;(global-set-key (kbd "C-c ; u") 'yas-expand)
-;;(global-set-key (kbd "C-c ; s") 'yas-insert-snippet)
-(yas-global-mode 1)
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :init (yas-global-mode t))
+
+;; Autocomplete
+(use-package company
+  :defer 10
+  :diminish company-mode
+  :bind (:map company-active-map
+              ("M-n" . company-select-next)
+              ("M-p" . company-select-previous))
+  :preface
+  ;; enable yasnippet everywhere
+  (defvar company-mode/enable-yas t
+    "Enable yasnippet for all backends.")
+  (defun company-mode/backend-with-yas (backend)
+    (if (or 
+         (not company-mode/enable-yas) 
+         (and (listp backend) (member 'company-yasnippet backend)))
+        backend
+      (append (if (consp backend) backend (list backend))
+              '(:with company-yasnippet))))
+
+  :init (global-company-mode t)
+  :config
+  )
+
+;;ycmd
+;; Code-comprehension server
+(use-package ycmd
+  :ensure t
+  :init (add-hook 'c-mode-hook #'ycmd-mode)
+  :config
+  (set-variable 'ycmd-server-command '("/Users/Jie/anaconda3/bin/python3" "-u"  "/Users/Jie/Documents/workspace/tools/ycmd/ycmd"))
+  (set-variable 'ycmd-global-config (expand-file-name "/Users/Jie/.emacs.d/ycm_extra_conf.py"))
+
+  (set-variable 'ycmd-extra-conf-whitelist '("~/Documents/workspace/c_study/*"))
+
+  (use-package company-ycmd
+    :ensure t
+    :init (company-ycmd-setup)
+    :config (add-to-list 'company-backends (company-mode/backend-with-yas 'company-ycmd))))
 
 ;; auto-completed
 (require 'auto-complete)
@@ -213,7 +259,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (iedit auto-complete-c-headers auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
+    (company-ycmd ycmd iedit auto-complete-c-headers auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -221,3 +267,4 @@
  ;; If there is more than one, they won't work right.
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 (put 'scroll-left 'disabled nil)
+(put 'set-goal-column 'disabled nil)
