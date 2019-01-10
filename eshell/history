@@ -48,3 +48,8 @@ cc hello.c
 rm -rf a.out 
 clear
 ls
+cd ..
+make clean
+make 
+./hello_c 
+exit

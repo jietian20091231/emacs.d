@@ -37,7 +37,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/Jie/.emacs.d/" (23587 38115 967065 751000) "emacs_study/" "#init.el#" "ycm_extra_conf.py" ".git/" "elpa/" "recentf" ".#init.el" "init.el" "auto-save-list/" "recentf~" "ido.last~" "eshell/" "init.el~" "ido.last" "snippets/" "ac-comphist.dat" "../" "./")
+ ("/Users/Jie/.emacs.d/" (23607 27491 560717 534000) "emacs_study/" "#init.el#" "ycm_extra_conf.py" ".git/" "elpa/" "recentf" ".#init.el" "init.el" "auto-save-list/" "ido.last~" "eshell/" "ido.last" "snippets/" "ac-comphist.dat" "../" "./")
 
  ("/Users/Jie/Documents/workspace/emacs_study/" (23587 33423 197425 476000) "emacs_tutorial" ".#brew_install_emacs_message" "brew_install_emacs_message" "../" "./")
 

@@ -1,9 +1,5 @@
 ;; emacs editor base setting
 
-;;set python interperter
-(setq python-shell-interpreter "/Users/Jie/anaconda3/bin/python3")
-(setq python-shell-virtualenv-path "/Users/Jie/anaconda3")
-
 ;;
 (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
@@ -170,55 +166,6 @@
 (global-set-key (kbd "C-c C-j") 'avy-resume)
 
 
-;; yasnippet
-(use-package yasnippet
-  :ensure t
-  :diminish yas-minor-mode
-  :init (yas-global-mode t))
-
-;; Autocomplete
-(use-package company
-  :defer 10
-  :diminish company-mode
-  :bind (:map company-active-map
-              ("M-n" . company-select-next)
-              ("M-p" . company-select-previous))
-  :preface
-  ;; enable yasnippet everywhere
-  (defvar company-mode/enable-yas t
-    "Enable yasnippet for all backends.")
-  (defun company-mode/backend-with-yas (backend)
-    (if (or 
-         (not company-mode/enable-yas) 
-         (and (listp backend) (member 'company-yasnippet backend)))
-        backend
-      (append (if (consp backend) backend (list backend))
-              '(:with company-yasnippet))))
-
-  :init (global-company-mode t)
-  :config
-  )
-
-;;ycmd
-;; Code-comprehension server
-(use-package ycmd
-  :ensure t
-  :init (add-hook 'c-mode-hook #'ycmd-mode)
-  :config
-  (set-variable 'ycmd-server-command '("/Users/Jie/anaconda3/bin/python3" "-u"  "/Users/Jie/Documents/workspace/tools/ycmd/ycmd"))
-  (set-variable 'ycmd-global-config (expand-file-name "/Users/Jie/.emacs.d/ycm_extra_conf.py"))
-
-  (set-variable 'ycmd-extra-conf-whitelist '("~/Documents/workspace/c_study/*"))
-
-  (use-package company-ycmd
-    :ensure t
-    :init (company-ycmd-setup)
-    :config (add-to-list 'company-backends (company-mode/backend-with-yas 'company-ycmd))))
-
-;; auto-completed
-(require 'auto-complete)
-(ac-config-default)
-
 ;; auto-completed header
 (defun my:ac-c-header-init()
   (require 'auto-complete-c-headers)
@@ -247,6 +194,69 @@
     (global-highlight-parentheses-mode)
     ;;make paren highlight update after stuff like paredit changes
     (add-to-list 'after-change-functions '(lambda (&rest x) (hl-paren-highlight)))))
+
+;;company+ycmd+gtags+flycheck
+;; Snippets
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :init (yas-global-mode t))
+
+(require  'validate)
+;; Autocomplete
+(use-package company
+  :defer 10
+  :diminish company-mode
+  :bind (:map company-active-map
+              ("M-j" . company-select-next)
+              ("M-k" . company-select-previous))
+  :preface
+  ;; enable yasnippet everywhere
+  (defvar company-mode/enable-yas t
+    "Enable yasnippet for all backends.")
+  (defun company-mode/backend-with-yas (backend)
+    (if (or 
+         (not company-mode/enable-yas) 
+         (and (listp backend) (member 'company-yasnippet backend)))
+        backend
+      (append (if (consp backend) backend (list backend))
+              '(:with company-yasnippet))))
+
+  :init (global-company-mode t)
+  :config
+  ;; no delay no autocomplete
+  (validate-setq
+   company-idle-delay 0
+   company-minimum-prefix-length 2
+   company-tooltip-limit 20)
+
+  (validate-setq company-backends 
+                 (mapcar #'company-mode/backend-with-yas company-backends)))
+;; Code-comprehension server
+(use-package ycmd
+  :ensure t
+  :init (add-hook 'c-mode-hook #'ycmd-mode)
+  :config
+  (set-variable 'ycmd-server-command '("/Library/Frameworks/Python.framework/Versions/3.6/bin/python3"
+				       "/Users/Jie/Documents/workspace/tools/ycmd/ycmd"))
+  (set-variable 'ycmd-global-config (expand-file-name
+				     "/Users/Jie/Documents/workspace/tools/ycmd/examples/.ycm_extra_conf.py"))
+
+  (set-variable 'ycmd-extra-conf-whitelist '("~/Documents/workspace/c_project/*"))
+
+  (use-package company-ycmd
+    :ensure t
+    :init (company-ycmd-setup)
+    :config (add-to-list 'company-backends (company-mode/backend-with-yas 'company-ycmd))))
+
+(use-package flycheck
+  :ensure t
+  :diminish flycheck-mode
+  :init (global-flycheck-mode t))
+
+(use-package flycheck-ycmd
+  :commands (flycheck-ycmd-setup)
+  :init (add-hook 'ycmd-mode-hook 'flycheck-ycmd-setup))
   
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -259,7 +269,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (company-ycmd ycmd iedit auto-complete-c-headers auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
+    (flycheck-ycmd flycheck validate company-ycmd ycmd iedit auto-complete-c-headers auto-complete ace-window org-bullets beacon spacemacs-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
